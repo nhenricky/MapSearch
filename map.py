@@ -27,7 +27,7 @@ def move_map(e):
 with ui.row().classes('justify-center items-center gap-8 mt-6'):
     map = ui.leaflet(
         center=(51.505, -0.09),
-        zoom=5).classes('w-[500px] h-[500px] rounded-x1 shadow-lg')
+        zoom=5).classes('w-[300px] h-[300px] rounded-x1 shadow-lg')
         
     with ui.column().classes('gap-4'):
         
@@ -43,5 +43,6 @@ with ui.row().classes('justify-center items-center gap-8 mt-6'):
             'border-2 border-purple-600 '
             'rounded-lg shadow-md bg-white'
         )
+
 
 ui.run()
