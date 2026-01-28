@@ -6,7 +6,6 @@ ui.label('MapSearch').classes(
     'text-transparent bg-clip-text '
     'animate-pulse '
 )
-
 ui.separator()
 
 CONTINENT_CENTERS = {
