@@ -7,6 +7,8 @@ ui.label('MapSearch').classes(
     'animate-pulse '
 )
 
+ui.separator()
+
 CONTINENT_CENTERS = {
     'North America': ((54.5260, -105.2551), 3),
     'South America': ((-8.7832, -55.4915), 3),
@@ -43,6 +45,5 @@ with ui.row().classes('justify-center items-center gap-8 mt-6'):
             'border-2 border-purple-600 '
             'rounded-lg shadow-md bg-white'
         )
-
 
 ui.run()
