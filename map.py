@@ -3,8 +3,7 @@ from nicegui import ui
 ui.label('MapSearch').classes(
     'text-4xl font-extrabold text-center mt-6 '
     'bg-gradient-to-r from-purple-600 via-green-500 to-black-600 '
-    'text-transparent bg-clip-text '
-    'animate-pulse '
+    'text-transparent bg-clip-text animate-pulse '
 )
 ui.separator()
 
@@ -19,16 +18,26 @@ CONTINENT_CENTERS = {
 }
 
 def move_map(e):
-    if e.value is None:
+    continent = e.value
+    if not continent or continent not in CONTINENT_CENTERS:
         return
-    center, zoom = CONTINENT_CENTERS[e.value]
+    
+    center, zoom = CONTINENT_CENTERS[continent]
     map.center = center
     map.zoom = zoom 
-
-with ui.row().classes('justify-center items-center gap-8 mt-6'):
+    
+    # 'justify-center items-center gap-8 mt-6'
+with ui.row().classes('w-full flex-col md:flex-row justify-center items-center gap-8 mt-6'):
     map = ui.leaflet(
-        center=(51.505, -0.09),
-        zoom=5).classes('w-[300px] h-[300px] rounded-x1 shadow-lg')
+        center=(20, 0),
+        # center=(51.505, -0.09),
+        # zoom=5).classes('w-[300px] h-[300px] rounded-xl shadow-lg')
+        zoom=2).classes(
+            'w-[90vw] max-w-[1000px] '
+            'h-[70vh] max-h-[700px] '
+            'rounded-xl shadow-lg'
+        )
+        
         
     with ui.column().classes('gap-4'):
         
